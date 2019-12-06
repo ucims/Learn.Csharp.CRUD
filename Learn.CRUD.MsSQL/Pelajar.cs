@@ -10,7 +10,7 @@ namespace Learn.CRUD.MsSQL
     {
         public int Id { get; set; }
         public string Roll { get; set; }
-        public decimal Math { get; set; }
+        public decimal Bahasa { get; set; }
         public decimal English { get; set; }
         public decimal Science { get; set; }
     }

@@ -17,6 +17,8 @@ namespace Learn.CRUD.MsSQL
         public Form1()
         {
             InitializeComponent();
+            buttonDelete.Enabled = false;
+            buttonUpdate.Enabled = false;
         }
 
         private void buttonSimpan_Click(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace Learn.CRUD.MsSQL
         {
             Pelajar pelajar = new Pelajar();
             pelajar.Roll = textBoxRoll.Text;
-            pelajar.Math = Convert.ToDecimal(textBoxMath.Text);
+            pelajar.Bahasa = Convert.ToDecimal(textBoxBahasa.Text);
             pelajar.English = Convert.ToDecimal(textBoxEnglish.Text);
             pelajar.Science = Convert.ToDecimal(textBoxScience.Text);
             Gateway gateway = new Gateway();
@@ -41,7 +43,7 @@ namespace Learn.CRUD.MsSQL
         {
             textBoxEnglish.Text = "";
             textBoxScience.Text = "";
-            textBoxMath.Text = "";
+            textBoxBahasa.Text = "";
             textBoxRoll.Text = "";
         }
 
@@ -54,7 +56,38 @@ namespace Learn.CRUD.MsSQL
 
             textBoxEnglish.Text = pelajar.English.ToString();
             textBoxScience.Text = pelajar.Science.ToString();
-            textBoxMath.Text = pelajar.Math.ToString();
+            textBoxBahasa.Text = pelajar.Bahasa.ToString();
+
+            buttonSimpan.Enabled = false;
+            buttonDelete.Enabled = true;
+            buttonUpdate.Enabled = true;
+        }
+        // button update
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pelajar pelajar = new Pelajar();
+            Gateway gateway = new Gateway();
+
+            pelajar.Roll = textBoxRoll.Text;
+            pelajar.Bahasa = Convert.ToDecimal(textBoxBahasa.Text);
+            pelajar.English = Convert.ToDecimal(textBoxEnglish.Text);
+            pelajar.Science = Convert.ToDecimal(textBoxScience.Text);
+            gateway.Update(pelajar);
+
+            MessageBox.Show("Updated");
+
+            ResetField();
+        }
+        // btn delete
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            pelajar = new Pelajar();
+            gateway = new Gateway();
+            pelajar.Roll = textBoxRoll.Text;
+            gateway.Delete(pelajar);
+
+            MessageBox.Show("Deleted");
+            ResetField();
         }
     }
 }

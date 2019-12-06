@@ -33,11 +33,13 @@
             this.buttonLihat = new System.Windows.Forms.Button();
             this.textBoxScience = new System.Windows.Forms.TextBox();
             this.textBoxEnglish = new System.Windows.Forms.TextBox();
-            this.textBoxMath = new System.Windows.Forms.TextBox();
+            this.textBoxBahasa = new System.Windows.Forms.TextBox();
             this.buttonSimpan = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +55,7 @@
             // 
             this.textBoxRoll.Location = new System.Drawing.Point(86, 13);
             this.textBoxRoll.Name = "textBoxRoll";
-            this.textBoxRoll.Size = new System.Drawing.Size(192, 20);
+            this.textBoxRoll.Size = new System.Drawing.Size(237, 20);
             this.textBoxRoll.TabIndex = 1;
             // 
             // buttonLihat
@@ -70,29 +72,29 @@
             // 
             this.textBoxScience.Location = new System.Drawing.Point(86, 91);
             this.textBoxScience.Name = "textBoxScience";
-            this.textBoxScience.Size = new System.Drawing.Size(192, 20);
-            this.textBoxScience.TabIndex = 1;
+            this.textBoxScience.Size = new System.Drawing.Size(237, 20);
+            this.textBoxScience.TabIndex = 3;
             // 
             // textBoxEnglish
             // 
             this.textBoxEnglish.Location = new System.Drawing.Point(86, 117);
             this.textBoxEnglish.Name = "textBoxEnglish";
-            this.textBoxEnglish.Size = new System.Drawing.Size(192, 20);
-            this.textBoxEnglish.TabIndex = 1;
+            this.textBoxEnglish.Size = new System.Drawing.Size(237, 20);
+            this.textBoxEnglish.TabIndex = 4;
             // 
-            // textBoxMath
+            // textBoxBahasa
             // 
-            this.textBoxMath.Location = new System.Drawing.Point(86, 143);
-            this.textBoxMath.Name = "textBoxMath";
-            this.textBoxMath.Size = new System.Drawing.Size(192, 20);
-            this.textBoxMath.TabIndex = 1;
+            this.textBoxBahasa.Location = new System.Drawing.Point(86, 143);
+            this.textBoxBahasa.Name = "textBoxBahasa";
+            this.textBoxBahasa.Size = new System.Drawing.Size(237, 20);
+            this.textBoxBahasa.TabIndex = 5;
             // 
             // buttonSimpan
             // 
             this.buttonSimpan.Location = new System.Drawing.Point(86, 169);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(75, 23);
-            this.buttonSimpan.TabIndex = 2;
+            this.buttonSimpan.TabIndex = 6;
             this.buttonSimpan.Text = "Simpan";
             this.buttonSimpan.UseVisualStyleBackColor = true;
             this.buttonSimpan.Click += new System.EventHandler(this.buttonSimpan_Click);
@@ -120,18 +122,40 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 150);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Math";
+            this.label5.Text = "Bahasa";
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(167, 169);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdate.TabIndex = 7;
+            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(248, 169);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 8;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 378);
+            this.ClientSize = new System.Drawing.Size(348, 213);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonSimpan);
             this.Controls.Add(this.buttonLihat);
-            this.Controls.Add(this.textBoxMath);
+            this.Controls.Add(this.textBoxBahasa);
             this.Controls.Add(this.textBoxEnglish);
             this.Controls.Add(this.textBoxScience);
             this.Controls.Add(this.textBoxRoll);
@@ -153,11 +177,13 @@
         private System.Windows.Forms.Button buttonLihat;
         private System.Windows.Forms.TextBox textBoxScience;
         private System.Windows.Forms.TextBox textBoxEnglish;
-        private System.Windows.Forms.TextBox textBoxMath;
+        private System.Windows.Forms.TextBox textBoxBahasa;
         private System.Windows.Forms.Button buttonSimpan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }
 

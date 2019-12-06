@@ -18,7 +18,7 @@ namespace Learn.CRUD.MsSQL
 
             msConn().Open();
 
-            string query = @"INSERT INTO Mahasiswa VALUES(" + pelajar.Roll + "," + pelajar.English + "," + pelajar.Math + "," + pelajar.Science + ")";
+            string query = @"INSERT INTO Mahasiswa VALUES(" + pelajar.Roll + "," + pelajar.English + "," + pelajar.Bahasa + "," + pelajar.Science + ")";
             SqlCommand command = new SqlCommand(query, msConn());
             command.ExecuteNonQuery();
             //sqlConnection.Close();
@@ -41,13 +41,39 @@ namespace Learn.CRUD.MsSQL
             {
                 pelajar.Id = Convert.ToInt32(sqlDataReader["Id"].ToString());
                 pelajar.Roll = sqlDataReader["Roll"].ToString();
-                pelajar.English = Convert.ToDecimal(sqlDataReader["Id"].ToString());
-                pelajar.Math = Convert.ToDecimal(sqlDataReader["Id"].ToString());
-                pelajar.Science = Convert.ToDecimal(sqlDataReader["Id"].ToString());
-
+                pelajar.English = Convert.ToDecimal(sqlDataReader["English"].ToString());
+                pelajar.Bahasa = Convert.ToDecimal(sqlDataReader["Bahasa"].ToString());
+                pelajar.Science = Convert.ToDecimal(sqlDataReader["Science"].ToString());
             }
             return pelajar;
 
+        }
+
+        public bool Update(Pelajar pelajar)
+        {
+            //pelajar = new Pelajar();
+            string conn = "Data Source=DESKTOP-V5VOD86\\SQLEXPRESS;Initial Catalog=Universitas;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(conn);
+            sqlConnection.Open();
+
+            string query = @"UPDATE Mahasiswa SET Bahasa = " + pelajar.English + ",English = " + pelajar.Bahasa + ", Science = " + pelajar.Science + "WHERE Roll = " + pelajar.Roll;
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return true;
+        }
+
+        public bool Delete(Pelajar pelajar)
+        {
+            string conn = "Data Source=DESKTOP-V5VOD86\\SQLEXPRESS;Initial Catalog=Universitas;Integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(conn);
+            sqlConnection.Open();
+
+            string query = @"DELETE FROM Mahasiswa WHERE Roll = " + pelajar.Roll;
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return true;
         }
 
         private SqlConnection msConn()
