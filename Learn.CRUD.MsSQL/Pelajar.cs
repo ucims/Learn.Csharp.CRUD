@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Learn.CRUD.MsSQL
 {
-    class Siswa
+    public class Pelajar
     {
         public int Id { get; set; }
         public string Roll { get; set; }
-        public decimal Bahasa { get; set; }
+        public decimal Math { get; set; }
         public decimal English { get; set; }
         public decimal Science { get; set; }
     }

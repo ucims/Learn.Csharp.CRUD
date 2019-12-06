@@ -64,6 +64,7 @@
             this.buttonLihat.TabIndex = 2;
             this.buttonLihat.Text = "Lihat";
             this.buttonLihat.UseVisualStyleBackColor = true;
+            this.buttonLihat.Click += new System.EventHandler(this.buttonLihat_Click);
             // 
             // textBoxScience
             // 
@@ -94,6 +95,7 @@
             this.buttonSimpan.TabIndex = 2;
             this.buttonSimpan.Text = "Simpan";
             this.buttonSimpan.UseVisualStyleBackColor = true;
+            this.buttonSimpan.Click += new System.EventHandler(this.buttonSimpan_Click);
             // 
             // label2
             // 
