@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.CRUD.MsSQL", "Learn.CRUD.MsSQL\Learn.CRUD.MsSQL.csproj", "{FEF3C5D0-80C0-4F1F-A56D-8BC33210CC06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.CRUD.PostgreSQL", "Learn.CRUD.PostgreSQL\Learn.CRUD.PostgreSQL.csproj", "{D4B45C24-F207-4DFA-859A-CFCE3F8451DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FEF3C5D0-80C0-4F1F-A56D-8BC33210CC06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEF3C5D0-80C0-4F1F-A56D-8BC33210CC06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEF3C5D0-80C0-4F1F-A56D-8BC33210CC06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4B45C24-F207-4DFA-859A-CFCE3F8451DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B45C24-F207-4DFA-859A-CFCE3F8451DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4B45C24-F207-4DFA-859A-CFCE3F8451DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B45C24-F207-4DFA-859A-CFCE3F8451DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
