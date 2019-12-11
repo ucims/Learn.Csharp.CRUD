@@ -77,6 +77,7 @@
             this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // textBoxFirstName
             // 
@@ -84,6 +85,7 @@
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(318, 20);
             this.textBoxFirstName.TabIndex = 3;
+            this.textBoxFirstName.Click += new System.EventHandler(this.textBoxFirstName_Click);
             // 
             // textBoxLastName
             // 
@@ -146,6 +148,7 @@
             this.buttonDelete.TabIndex = 10;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonUpdate
             // 
@@ -156,6 +159,7 @@
             this.buttonUpdate.TabIndex = 9;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // radioButtonLK
             // 

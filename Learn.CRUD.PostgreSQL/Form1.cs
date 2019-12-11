@@ -80,6 +80,8 @@ namespace Learn.CRUD.PostgreSQL
             dataGridView.Columns[2].Width = 100;
             dataGridView.Columns[3].Width = 100;
             dataGridView.Columns[4].Width = 100;
+
+            buttonInsert.Enabled = true;
         }
 
         private void execute(string psql_, string param)
@@ -145,6 +147,75 @@ namespace Learn.CRUD.PostgreSQL
                 textBoxLastName.Text = Convert.ToString(dataGridView.CurrentRow.Cells[2].Value);
                 textBoxAddress.Text = Convert.ToString(dataGridView.CurrentRow.Cells[3].Value);
             }
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Select item from table"," Data kosong", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+            if(string.IsNullOrEmpty(this.Id))
+            {
+                MessageBox.Show("Field tidak boleh kosong, kaya hati yang ngoding wkwkwkwkwkwkwkwkwkwkwk", "Insert data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            ClassCrud.sql = "UPDATE tbl_biodata SET firstname = @firstname, lastname = @lastname, address = @address, gender = @gender WHERE id = @id::integer";
+            execute(ClassCrud.sql, "Update");
+            MessageBox.Show("Update Success", "Update data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            loadData("");
+            ResetField();
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Select item from table", " Data kosong", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+            if (string.IsNullOrEmpty(this.Id))
+            {
+                MessageBox.Show("Field tidak boleh kosong, kaya hati yang ngoding wkwkwkwkwkwkwkwkwkwkwk", "Insert data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+            if(MessageBox.Show("Apakah anda ingin menghapus semua kenangan yang ada agar tidak galu mengingat masa lalau","Delete Kenangan Permanen", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                ClassCrud.sql = "DELETE FROM tbl_biodata WHERE id = @id::integer";
+                execute(ClassCrud.sql, "Update");
+                MessageBox.Show("Delete Success", "Delete data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadData("");
+                ResetField();
+            }
+            else
+            {
+                MessageBox.Show("Move on Gagal", "Delete data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(textBoxSearch.Text.Trim()))
+            {
+                loadData("");
+            }
+            else
+            {
+                loadData(textBoxSearch.Text.Trim());
+            }
+        }
+
+        private void textBoxFirstName_Click(object sender, EventArgs e)
+        {
         }
     }
 
